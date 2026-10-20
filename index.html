@@ -81,15 +81,18 @@
     .placeholder.square{aspect-ratio:1}
     .placeholder.portrait{aspect-ratio:4/5}
     .hero .placeholder{border-color:var(--cream);border-radius:28px}
-    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start}
-    .about-summary{margin:10px 0 16px;max-width:72ch}
-    .about-card{display:grid;grid-template-columns:132px 1fr;gap:20px;align-items:center}
-    .about-photo{width:132px}
-    .contact-list{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:4px}
-    .contact-list a{text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
-    .competencies{border-left:2px solid var(--brown);padding-left:30px}
-    .tag-list{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none;margin:14px 0 0}
-    .tag{background:var(--blue);border:1.5px solid var(--brown);border-radius:999px;padding:6px 12px;font-size:.92rem;font-weight:600}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px);align-items:stretch}
+    .about-summary{margin:10px 0 18px;max-width:66ch;line-height:1.85;text-align:left;text-wrap:pretty}
+    .about-card{display:grid;grid-template-columns:minmax(150px, .72fr) minmax(0,1.28fr);gap:22px;align-items:start}
+    .about-photo{width:100%;max-width:210px}
+    .contact-list{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:9px}
+    .contact-list li{display:flex;align-items:center;gap:10px;min-width:0}
+    .contact-list a{text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere;min-width:0}
+    .contact-icon{width:30px;height:30px;flex:0 0 30px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;background:var(--blue);border:1.5px solid var(--brown);font-size:1rem;font-weight:700;line-height:1}
+    .line-icon{background:#06c755;color:#fff;border-color:#06c755;font-size:.58rem;letter-spacing:-.03em}
+    .competencies{border-left:2px solid var(--brown);padding-left:clamp(20px,2.5vw,32px);display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .tag-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0;list-style:none;margin:14px 0 0}
+    .tag{display:flex;align-items:center;min-height:48px;background:var(--blue);border:1.5px solid var(--brown);border-radius:12px;padding:9px 12px;font-size:.92rem;font-weight:600;line-height:1.45;overflow-wrap:anywhere}
     .section-blue .tag{background:var(--cream)}
     .timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
     .experience-card{background:var(--cream);border:2px solid var(--brown);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
@@ -102,10 +105,10 @@
     .mini-project{margin-top:14px;background:#f7e8ad;border:1.5px solid var(--brown);border-radius:12px;padding:12px}
     .event-strip{margin-top:18px;background:var(--cream);border:2px solid var(--brown);border-radius:999px;padding:13px 20px;display:flex;align-items:center;gap:14px}
     .event-extra{margin-top:28px;padding:20px;border:2px solid var(--brown);border-radius:20px;background:var(--cream)}
-    .event-carousel{display:flex;align-items:center;gap:10px}
-    .event-track{display:flex;gap:12px;overflow-x:auto;scrollbar-width:thin;scroll-behavior:smooth;flex:1;padding:8px 2px}
-    .event-photo{flex:0 0 220px;aspect-ratio:4/3}
-    .carousel-control{flex:0 0 42px;height:42px;border:2px solid var(--brown);border-radius:50%;background:var(--brown);color:var(--cream);font-size:1.6rem;cursor:pointer}
+    .event-carousel{display:grid;grid-template-columns:42px minmax(0,1fr) 42px;align-items:stretch;gap:10px;min-width:0}
+    .event-track{display:flex;align-items:stretch;gap:12px;overflow-x:auto;scrollbar-width:thin;scroll-behavior:smooth;min-width:0;padding:8px 2px}
+    .event-photo{flex:0 0 220px;aspect-ratio:4/3;min-width:0}
+    .carousel-control{width:100%;min-width:0;height:auto;align-self:stretch;display:flex;align-items:center;justify-content:center;padding:0;border:2px solid var(--brown);border-radius:12px;background:var(--brown);color:var(--cream);font-size:1.6rem;line-height:1;cursor:pointer}
     .tag{border:2px solid var(--brown);border-radius:999px;background:var(--cream);padding:7px 12px;font-weight:600}
     .campaign-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
     .campaign-card{background:var(--cream);border:2px solid var(--brown);border-radius:20px;padding:20px;box-shadow:var(--shadow);min-width:0}
@@ -157,6 +160,11 @@
     @media(max-width:950px){
       .nav-links{gap:12px}.nav-links a{font-size:.82rem}
       .hero-grid{grid-template-columns:1fr .72fr}.hero{padding:58px 0}
+      .about-grid{grid-template-columns:1fr;gap:30px}
+      .about-card{grid-template-columns:minmax(170px, .36fr) minmax(0,1fr);gap:26px;align-items:start}
+      .about-photo{max-width:220px}
+      .competencies{border-left:0;border-top:2px solid var(--brown);padding:24px 0 0}
+      .tag-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
       .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .campaign-layout{grid-template-columns:1fr}.campaign-details{border-left:0;border-top:2px solid var(--brown);padding:12px 0 0}
     }
@@ -174,8 +182,12 @@
       .portrait-wrap{max-width:300px;justify-self:start}
       .section{padding:52px 0}
       .section-heading{display:block}
-      .about-grid{grid-template-columns:1fr;gap:26px}
+      .about-grid{grid-template-columns:1fr;gap:28px}
+      .about-card{grid-template-columns:minmax(110px,.34fr) minmax(0,1fr);gap:16px}
+      .about-photo{max-width:180px}
+      .about-summary{line-height:1.75}
       .competencies{border-left:0;border-top:2px solid var(--brown);padding:22px 0 0}
+      .tag-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
       .timeline,.campaign-grid,.education-grid,.contact-grid{grid-template-columns:1fr}
       .event-strip{border-radius:18px;align-items:flex-start}
       .campaign-layout{grid-template-columns:1fr .95fr;gap:12px}
@@ -186,7 +198,9 @@
     }
     @media(max-width:420px){
       .nav-actions{gap:6px}.lang-btn{padding:4px 8px}
-      .about-card{grid-template-columns:96px 1fr;gap:12px}.about-photo{width:96px}
+      .about-card{grid-template-columns:88px minmax(0,1fr);gap:12px}.about-photo{width:88px;max-width:88px}
+      .contact-list{gap:7px}.contact-icon{width:27px;height:27px;flex-basis:27px}
+      .tag{font-size:.86rem;padding:8px 9px}
       .campaign-layout{grid-template-columns:1fr}
       .campaign-details{padding-top:12px}
       .skills-grid{grid-template-columns:1fr}
@@ -204,13 +218,13 @@
   <a class="skip-link" href="#main" data-i18n="skip">ข้ามไปยังเนื้อหาหลัก</a>
   <header class="navbar">
     <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="Manee Thongkam — Home" data-i18n-aria="navHomeAria">Manee Thongkam ✳</a>
+      <a class="brand" href="#home" aria-label="Manee Thongkam — Home" data-i18n-aria="navHomeAria">Manee Thongkam</a>
       <nav class="nav-links" id="navLinks" aria-label="เมนูหลัก" data-i18n-aria="navAria">
         <a href="#home" data-i18n="navHome">หน้าหลัก</a>
         <a href="#about" data-i18n="navAbout">เกี่ยวกับฉัน</a>
         <a href="#experience" data-i18n="navExperience">ประสบการณ์</a>
         <a href="#campaigns" data-i18n="navCampaigns">แคมเปญ</a>
-        <a href="#works" data-i18n="navWorks">ผลงาน</a>
+        <a href="#other-works" data-i18n="navWorks">ผลงาน</a>
         <a href="#education" data-i18n="navEducation">การศึกษา</a>
       </nav>
       <div class="nav-actions">
@@ -269,9 +283,9 @@
               <p class="about-summary" data-i18n="aboutSummary">มีประสบการณ์ด้านการประสานงานแคมเปญการตลาดและโครงการสร้างสรรค์ ครอบคลุมทั้งงานออนไลน์และออฟไลน์ ตั้งแต่การวางแผน การประสานงานกับลูกค้าและพาร์ตเนอร์ การติดตามกำหนดการ การดูแลรายละเอียดการดำเนินงาน ไปจนถึงการสรุปผลโครงการ พร้อมทักษะด้านการสื่อสาร การทำงานร่วมกับทีม และการแก้ไขปัญหาเฉพาะหน้า</p>
               <h3 data-i18n="aboutContactTitle">ช่องทางการติดต่อ</h3>
               <ul class="contact-list">
-                <li>☎ <a href="tel:+66640021856">064-002-1856</a></li>
-                <li>✉ <a href="mailto:thongkam.mn@gmail.com">thongkam.mn@gmail.com</a></li>
-                <li>LINE: <a href="https://line.me/ti/p/~khing_my" target="_blank" rel="noopener">khing_my</a></li>
+                <li><span class="contact-icon" aria-hidden="true">☎</span><a href="tel:+66640021856">064-002-1856</a></li>
+                <li><span class="contact-icon" aria-hidden="true">✉</span><a href="mailto:thongkam.mn@gmail.com">thongkam.mn@gmail.com</a></li>
+                <li><span class="contact-icon line-icon" aria-hidden="true">LINE</span><a href="https://line.me/ti/p/~khing_my" target="_blank" rel="noopener">khing_my</a></li>
               </ul>
             </div>
           </div>
@@ -291,21 +305,10 @@
           <article class="experience-card reveal">
             <div class="experience-top"><div><h3>ROAMING STARS TECHNOLOGY</h3><p class="role">KOL Specialist</p></div><span class="years" data-i18n="yearCurrent">ธ.ค. 2568 – ปัจจุบัน</span></div>
             <ul data-i18n-list="expRoaming"></ul>
-            <div class="mini-project"><strong data-i18n="featuredProjects">โปรเจกต์ที่เกี่ยวข้อง</strong><p>Arknights: Endfield · Carslan Moisturizer</p></div>
           </article>
           <article class="experience-card reveal">
             <div class="experience-top"><div><h3>SUNDAE SOLUTIONS</h3><p class="role">Sales CRM and DMS</p></div><span class="years" data-i18n="yearSundae">2566–2567</span></div>
             <ul data-i18n-list="expSundae"></ul>
-          </article>
-          <article class="experience-card reveal">
-            <div class="experience-top"><div><h3>KASETSART UNIVERSITY</h3><p class="role">Event Organizer / Creative</p></div><span class="years" data-i18n="yearKasetsart">ก.ย. 2566 – ส.ค. 2567</span></div>
-            <ul data-i18n-list="expKasetsart"></ul>
-            <div class="mini-project"><strong>Home Art</strong><p data-i18n="homeArt">Home Economics Art Festival (2566): ดูแลนิทรรศการ เวิร์กช็อป สวัสดิการ วางแผนพื้นที่ ออกแบบ Mood & Tone และจัดหาวัสดุ</p></div>
-          </article>
-          <article class="experience-card reveal">
-            <div class="experience-top"><div><h3>BUFFALO BRIDGE GALLERY</h3><p class="role">Curator / Creative</p></div><span class="years" data-i18n="internYear">2565 (ฝึกงาน)</span></div>
-            <ul data-i18n-list="expBuffalo"></ul>
-            <div class="mini-project"><strong>วันนี้กินอะไรดี</strong><p data-i18n="foodWaste">นิทรรศการ Food Waste & Climate: ออกแบบและจัดสรรพื้นที่ ดูแลอาร์ตเวิร์ก และบริหารโซเชียลมีเดีย</p></div>
           </article>
         </div>
         <div class="event-extra reveal"><h3 data-i18n="extraEventTitle">งานอีเวนต์เพิ่มเติม</h3><p data-i18n="extraEvent">PR Event: ประสานงาน Talent/Cosplayer กับร้านพันธมิตร คุมคิวหน้างาน และเป็น Staff กิจกรรมเพ้นต์กระถางร่วมกับ กฟผ.</p><div class="event-carousel" aria-label="Additional event photos"><button class="carousel-control" type="button" data-dir="-1" data-i18n-aria="carouselPrevAria" aria-label="รูปก่อนหน้า">‹</button><div class="event-track" id="eventTrack"><div class="placeholder event-photo" data-image="events.0" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div><div class="placeholder event-photo" data-image="events.1" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div><div class="placeholder event-photo" data-image="events.2" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div><div class="placeholder event-photo" data-image="events.3" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div><div class="placeholder event-photo" data-image="events.4" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div><div class="placeholder event-photo" data-image="events.5" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div><div class="placeholder event-photo" data-image="events.6" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div><div class="placeholder event-photo" data-image="events.7" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div><div class="placeholder event-photo" data-image="events.8" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div><div class="placeholder event-photo" data-image="events.9" data-alt-key="eventAlt"><svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m21 15-5-5L5 21"/></svg><span class="ph-label" data-i18n="placeholderImage">วางรูปที่นี่</span><span class="ph-size">800 × 600 px</span></div></div><button class="carousel-control" type="button" data-dir="1" data-i18n-aria="carouselNextAria" aria-label="รูปถัดไป">›</button></div><p class="muted" data-i18n="eventPrivacy">หากมีบุคคลที่เห็นใบหน้าชัดเจนในภาพงานอีเวนต์ ควรขออนุญาตก่อนเผยแพร่หรือเบลอใบหน้า</p></div>
@@ -398,7 +401,7 @@
       </div>
     </section>
 
-    <section class="section section-cream" id="other-works"><div class="container"><div class="works-panel reveal"><p class="eyebrow" data-i18n="worksEyebrow">PORTFOLIO</p><h2 data-i18n="otherWorksTitle">ผลงานอื่น ๆ</h2><div class="work-tabs" role="tablist" aria-label="หมวดหมู่ผลงาน" data-i18n-aria="workTabsAria"><button class="tab-btn" type="button" role="tab" aria-selected="true" data-tab="content" data-i18n="tabContent">การเขียน</button><button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="drawing" data-i18n="tabDrawing">การวาด</button><button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="graphic" data-i18n="tabGraphic">การออกแบบ</button><button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="video" data-i18n="tabVideo">วิดีโอ</button></div><div class="gallery" id="gallery" role="tabpanel" aria-live="polite"></div><p class="muted" data-i18n="galleryHint">เลือกภาพเพื่อดูขนาดใหญ่</p><p><strong data-i18n="graphicWorksLabel">ผลงานด้านการออกแบบ:</strong> <span data-i18n="graphicWorksDesc">โปสเตอร์ “วันนี้กินอะไรดี”, Floral Persona, Infographic Bakery, เมนู และ KOL Register ของ Roaming Stars</span></p><p><strong data-i18n="writingWorksLabel">ผลงานด้านการเขียน:</strong> <span data-i18n="writingWorksDesc">คอนเทนต์และรีวิวแอป หนังสือ และคาเฟ่</span></p><p><strong data-i18n="drawingWorksLabel">ผลงานด้านการวาด:</strong> <span data-i18n="drawingWorksDesc">ภาพประกอบตัวละคร ภาพวาดสี และงานเพ้นต์เรซิน</span></p><p><strong data-i18n="videoWorksLabel">วิดีโอ:</strong> TikTok <a href="https://www.tiktok.com/@gingerzkh" target="_blank" rel="noopener">@gingerzkh</a> — <span data-i18n="videoWorksDesc">วิดีโอรีวิวและคอนเทนต์</span></p></div></div></section>
+    <section class="section section-cream" id="other-works"><div class="container"><div class="works-panel reveal"><p class="eyebrow" data-i18n="worksEyebrow">PORTFOLIO</p><h2 data-i18n="otherWorksTitle">ผลงานอื่น ๆ</h2><div class="work-tabs" role="tablist" aria-label="หมวดหมู่ผลงาน" data-i18n-aria="workTabsAria"><button class="tab-btn" type="button" role="tab" aria-selected="true" data-tab="content" data-i18n="tabContent">การเขียน</button><button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="drawing" data-i18n="tabDrawing">การวาด</button><button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="graphic" data-i18n="tabGraphic">การออกแบบ</button><button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="video" data-i18n="tabVideo">วิดีโอ</button></div><div class="gallery" id="gallery" role="tabpanel" aria-live="polite"></div><p class="muted" data-i18n="galleryHint">เลือกภาพเพื่อดูขนาดใหญ่</p></div></div></section>
 
     <section class="contact-section" id="contact">
       <div class="container contact-grid">
@@ -471,7 +474,7 @@
         pageTitle:"มณี ทองคำ | Manee Thongkam — Portfolio",
         metaDescription:"พอร์ตโฟลิโอของ Manee Thongkam ด้าน KOL Campaign, Project Coordination และ Event",
         skip:"ข้ามไปยังเนื้อหาหลัก", navHome:"หน้าหลัก", navAbout:"เกี่ยวกับฉัน", navExperience:"ประสบการณ์", navCampaigns:"แคมเปญ", navWorks:"ผลงาน", navEducation:"การศึกษา", navContact:"ติดต่อ",
-        navHomeAria:"ไปยังหน้าหลัก", navAria:"เมนูหลัก", languageAria:"เลือกภาษา", menuToggleAria:"เปิดหรือปิดเมนู", heroEyebrow:"PORTFOLIO · 2026",
+        navHomeAria:"ไปยังหน้าหลัก", navAria:"เมนูหลัก", languageAria:"เลือกภาษา", menuToggleAria:"เปิดหรือปิดเมนู", heroEyebrow:"PORTFOLIO",
         profileTh:"มีประสบการณ์ด้านการบริหารแคมเปญ KOL ครอบคลุมทั้งการวางแผน ติดตามไทม์ไลน์ ประสานงานกับลูกค้าและผู้ที่เกี่ยวข้อง รวมถึงการจัดกิจกรรมทั้งออนไลน์และออฟไลน์ มีพื้นฐานด้านงานสร้างสรรค์และแก้ไขปัญหาเฉพาะหน้า",
         profileEn:"Experienced in coordinating KOL campaigns from planning and timeline tracking to client and stakeholder communication. I have supported both online and offline events, backed by a creative foundation and practical problem-solving experience.",
         heroWork:"ดูแคมเปญ ↗", heroOtherWorks:"ผลงานอื่น ๆ ↗", aboutContactTitle:"ช่องทางการติดต่อ", coreTitle:"ทักษะหลัก", carouselPrevAria:"รูปก่อนหน้า", carouselNextAria:"รูปถัดไป", eventPrivacy:"หากมีบุคคลที่เห็นใบหน้าชัดเจนในภาพงานอีเวนต์ ควรขออนุญาตก่อนเผยแพร่หรือเบลอใบหน้า", eventAlt:"ภาพงานอีเวนต์เพิ่มเติม", molichicRole:"คัดเลือก KOL ที่เหมาะสม เจรจาต่อรองและปิดข้อตกลง จัดทำ Content Brief ตรวจสอบคุณภาพคอนเทนต์ให้ตรงตามบรีฟ และจัดทำรายงานสรุปผลโครงการ", reiRole:"วางแผนไทม์ไลน์และบริหารงบประมาณ คัดเลือก Influencer ติดตามสถานะงานและการจัดส่งสินค้าผ่านระบบ ตรวจสอบคอนเทนต์ ดูแลกำหนดการโพสต์ และสรุปผลให้ลูกค้าหลังเผยแพร่ครบทุกโพสต์", graphicWorksLabel:"ผลงานด้านการออกแบบ:", graphicWorksDesc:"โปสเตอร์ “วันนี้กินอะไรดี”, Floral Persona, Infographic Bakery, เมนู และ KOL Register ของ Roaming Stars", writingWorksLabel:"ผลงานด้านการเขียน:", writingWorksDesc:"คอนเทนต์และรีวิวแอป หนังสือ และคาเฟ่", drawingWorksLabel:"ผลงานด้านการวาด:", drawingWorksDesc:"ภาพประกอบตัวละคร ภาพวาดสี และงานเพ้นต์เรซิน", videoWorksLabel:"วิดีโอ:", videoWorksDesc:"วิดีโอรีวิวและคอนเทนต์", heroContact:"ติดต่อ", placeholderProfile:"วางรูปโปรไฟล์ที่นี่", placeholderImage:"วางรูปที่นี่",
@@ -507,7 +510,7 @@
         pageTitle:"Manee Thongkam | Portfolio",
         metaDescription:"Manee Thongkam's portfolio in KOL campaigns, project coordination, and events.",
         skip:"Skip to main content", navHome:"Home", navAbout:"About", navExperience:"Experience", navCampaigns:"Campaigns", navWorks:"Works", navEducation:"Education", navContact:"Contact",
-        navHomeAria:"Go to home", navAria:"Main navigation", languageAria:"Choose language", menuToggleAria:"Open or close navigation menu", heroEyebrow:"PORTFOLIO · 2026",
+        navHomeAria:"Go to home", navAria:"Main navigation", languageAria:"Choose language", menuToggleAria:"Open or close navigation menu", heroEyebrow:"PORTFOLIO",
         profileTh:"มีประสบการณ์ด้านการบริหารแคมเปญ KOL ครอบคลุมทั้งการวางแผน ติดตามไทม์ไลน์ ประสานงานกับลูกค้าและผู้ที่เกี่ยวข้อง รวมถึงการจัดกิจกรรมทั้งออนไลน์และออฟไลน์ มีพื้นฐานด้านงานสร้างสรรค์และแก้ไขปัญหาเฉพาะหน้า",
         profileEn:"Experienced in coordinating KOL campaigns from planning and timeline tracking to client and stakeholder communication. I have supported both online and offline events, backed by a creative foundation and practical problem-solving experience.",
         heroWork:"View Campaigns ↗", heroOtherWorks:"Other Works ↗", aboutContactTitle:"Contact Details", coreTitle:"Core Competencies", carouselPrevAria:"Previous photo", carouselNextAria:"Next photo", eventPrivacy:"For event photos showing identifiable faces, obtain permission before publishing or blur faces.", eventAlt:"Additional event photo", molichicRole:"Sourced suitable KOLs, negotiated and confirmed collaborations, prepared Content Briefs, reviewed deliverables against the brief, and compiled project performance reports.", reiRole:"Planned timelines and managed budgets, sourced influencers, tracked work status and product shipments in the system, reviewed content, coordinated posting schedules, and reported campaign results to the client once all posts were live.", graphicWorksLabel:"Design works:", graphicWorksDesc:"Today’s Food poster, Floral Persona, bakery infographic, menus, and Roaming Stars KOL Register", writingWorksLabel:"Writing works:", writingWorksDesc:"Content and reviews of apps, books, and cafés", drawingWorksLabel:"Drawing works:", drawingWorksDesc:"Character illustrations, color paintings, and resin painting", videoWorksLabel:"Video:", videoWorksDesc:"Reviews and short-form content", heroContact:"Contact", placeholderProfile:"Profile photo goes here", placeholderImage:"Image goes here",
