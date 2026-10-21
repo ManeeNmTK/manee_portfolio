@@ -123,6 +123,13 @@
     .campaign-video iframe{width:100%!important;height:100%!important;max-height:100%!important;border:0!important}
     .gallery-video{min-width:0;overflow:hidden;border:2px solid var(--brown);border-radius:12px;background:#fff}
     .gallery-video .tiktok-embed{margin:0!important;width:100%!important;max-width:100%!important;min-width:0!important}
+    .video-cover{display:flex;position:relative;width:100%;height:100%;min-height:0;aspect-ratio:1/1;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(145deg,var(--blue),var(--cream));color:var(--brown);text-decoration:none;border-radius:10px;isolation:isolate}
+    .video-cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(67,47,46,.02),rgba(67,47,46,.42));z-index:-1}
+    .video-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}.video-cover .cover-platform,.video-cover .cover-play,.video-cover .cover-label{z-index:2}
+    .video-cover .cover-platform{position:absolute;top:10px;left:10px;background:rgba(254,239,184,.94);border:1.5px solid var(--brown);border-radius:999px;padding:3px 8px;font-size:.72rem;font-weight:700;line-height:1.4}
+    .video-cover .cover-play{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:rgba(254,239,184,.95);border:2px solid var(--brown);font-size:1.25rem;padding-left:3px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .video-cover .cover-label{position:absolute;left:10px;right:10px;bottom:10px;font-size:.78rem;font-weight:700;line-height:1.3;text-shadow:0 1px 2px rgba(255,255,255,.7)}
+    .gallery-video .video-cover{border-radius:10px}
     .campaign-images .placeholder{border-width:2px;border-radius:12px}
     .campaign-images .placeholder:first-child{grid-column:span 3;aspect-ratio:16/9}
     /* Campaign 01: larger square image tiles to balance the video frames in the other campaigns. */
@@ -360,15 +367,7 @@
           <article class="campaign-card reveal">
             <h3 data-i18n="carslanCampaignTitle">02 — 300-Influencer Campaign</h3><p class="campaign-subtitle" data-i18n="carslanSubtitle">Influencer Campaign · 300 Influencers</p>
             <div class="campaign-layout">
-              <div class="campaign-videos"><div class="campaign-video">
-                  <blockquote class="tiktok-preview" cite="https://vt.tiktok.com/ZSgUEqcvB/" data-video-id="" style="max-width:100%;min-width:0;">
-                    <section><a target="_blank" rel="noopener" href="https://vt.tiktok.com/ZSgUEqcvB/">ดูวิดีโอ TikTok 1</a></section>
-                  </blockquote>
-                </div><div class="campaign-video">
-                  <blockquote class="tiktok-preview" cite="https://vt.tiktok.com/ZSgUjKVp4/" data-video-id="" style="max-width:100%;min-width:0;">
-                    <section><a target="_blank" rel="noopener" href="https://vt.tiktok.com/ZSgUjKVp4/">ดูวิดีโอ TikTok 2</a></section>
-                  </blockquote>
-                </div></div>
+              <div class="campaign-videos"><div class="campaign-video"><a class="video-cover" href="https://vt.tiktok.com/ZSgUEqcvB/" target="_blank" rel="noopener noreferrer" data-video-url="https://vt.tiktok.com/ZSgUEqcvB/" data-platform="TikTok" aria-label="ดูวิดีโอ TikTok 1"><span class="cover-platform">TikTok</span><span class="cover-play" aria-hidden="true">▶</span><span class="cover-label">ดูวิดีโอ TikTok 1</span></a></div><div class="campaign-video"><a class="video-cover" href="https://vt.tiktok.com/ZSgUjKVp4/" target="_blank" rel="noopener noreferrer" data-video-url="https://vt.tiktok.com/ZSgUjKVp4/" data-platform="TikTok" aria-label="ดูวิดีโอ TikTok 2"><span class="cover-platform">TikTok</span><span class="cover-play" aria-hidden="true">▶</span><span class="cover-label">ดูวิดีโอ TikTok 2</span></a></div></div>
               <div class="campaign-details">
                 <div class="detail"><strong data-i18n="roleLabel">บทบาทของฉัน</strong><p data-i18n="carslanRole">สร้างและบริหารแคมเปญผ่าน TikTok Affiliate Partner พร้อมคัดเลือกและประสานงาน KOL จำนวน 300 คน ตั้งแต่การจัดการรายชื่อ ติดตามการดำเนินงาน ไปจนถึงการบริหารงบประมาณ ตรวจสอบคอนเทนต์ให้สอดคล้องกับแนวทางของแบรนด์ และติดตามความคืบหน้าให้เป็นไปตามกำหนดการ</p></div>
               </div>
@@ -378,15 +377,7 @@
           <article class="campaign-card reveal">
             <h3 data-i18n="campaign03Title">03 — Live Affiliate &amp; Video Review Campaign</h3><p class="campaign-subtitle" data-i18n="campaign03Subtitle">Affiliate Livestreams · Product Video Reviews</p>
             <div class="campaign-layout">
-              <div class="campaign-videos"><div class="campaign-video">
-                  <blockquote class="tiktok-preview" cite="https://vt.tiktok.com/ZSgUBVMt8/" data-video-id="" style="max-width:100%;min-width:0;">
-                    <section><a target="_blank" rel="noopener" href="https://vt.tiktok.com/ZSgUBVMt8/">ดูวิดีโอ TikTok 1</a></section>
-                  </blockquote>
-                </div><div class="campaign-video">
-                  <blockquote class="tiktok-preview" cite="https://vt.tiktok.com/ZSgUBysEs/" data-video-id="" style="max-width:100%;min-width:0;">
-                    <section><a target="_blank" rel="noopener" href="https://vt.tiktok.com/ZSgUBysEs/">ดูวิดีโอ TikTok 2</a></section>
-                  </blockquote>
-                </div></div>
+              <div class="campaign-videos"><div class="campaign-video"><a class="video-cover" href="https://vt.tiktok.com/ZSgUBVMt8/" target="_blank" rel="noopener noreferrer" data-video-url="https://vt.tiktok.com/ZSgUBVMt8/" data-platform="TikTok" aria-label="ดูวิดีโอ TikTok 1"><span class="cover-platform">TikTok</span><span class="cover-play" aria-hidden="true">▶</span><span class="cover-label">ดูวิดีโอ TikTok 1</span></a></div><div class="campaign-video"><a class="video-cover" href="https://vt.tiktok.com/ZSgUBysEs/" target="_blank" rel="noopener noreferrer" data-video-url="https://vt.tiktok.com/ZSgUBysEs/" data-platform="TikTok" aria-label="ดูวิดีโอ TikTok 2"><span class="cover-platform">TikTok</span><span class="cover-play" aria-hidden="true">▶</span><span class="cover-label">ดูวิดีโอ TikTok 2</span></a></div></div>
               <div class="campaign-details"><div class="detail"><strong data-i18n="roleLabel">บทบาทของฉัน</strong><p data-i18n="molichicRole">สร้างและบริหารแคมเปญผ่าน TikTok Affiliate Partner พร้อมคัดเลือกและประสานงาน KOL เจรจารายละเอียดความร่วมมือ จัดทำบรีฟ ติดตามกำหนดการและการเผยแพร่คอนเทนต์ รวมถึงประสานงานกับผู้เกี่ยวข้องเพื่อให้การดำเนินงานเป็นไปตามแผนแคมเปญ</p></div></div>
             </div>
           </article>
@@ -395,18 +386,7 @@
           <article class="campaign-card reveal">
             <h3 data-i18n="campaign04Title">04 — 20-Influencer Blind Box Review Campaign</h3><p class="campaign-subtitle" data-i18n="campaign04Subtitle">Blind Box & Plush Keychain Reviews · Non-TikTok Platforms</p>
             <div class="campaign-layout">
-              <div class="campaign-videos instagram-videos">
-                <div class="campaign-video">
-                  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dd50MRcTkJ5/" data-instgrm-version="14" style="width:100%;max-width:100%;margin:0;">
-                    <a href="https://www.instagram.com/reel/Dd50MRcTkJ5/" target="_blank" rel="noopener">ดูวิดีโอ Instagram Reel 1</a>
-                  </blockquote>
-                </div>
-                <div class="campaign-video">
-                  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdtXM1TxOtN/" data-instgrm-version="14" style="width:100%;max-width:100%;margin:0;">
-                    <a href="https://www.instagram.com/reel/DdtXM1TxOtN/" target="_blank" rel="noopener">ดูวิดีโอ Instagram Reel 2</a>
-                  </blockquote>
-                </div>
-              </div>
+              <div class="campaign-videos instagram-videos"><div class="campaign-video"><a class="video-cover" href="https://www.instagram.com/reel/Dd50MRcTkJ5/" target="_blank" rel="noopener noreferrer" data-video-url="https://www.instagram.com/reel/Dd50MRcTkJ5/" data-platform="Instagram" aria-label="ดูวิดีโอ Instagram Reel 1"><span class="cover-platform">Instagram</span><span class="cover-play" aria-hidden="true">▶</span><span class="cover-label">ดูวิดีโอ Instagram Reel 1</span></a></div><div class="campaign-video"><a class="video-cover" href="https://www.instagram.com/reel/DdtXM1TxOtN/" target="_blank" rel="noopener noreferrer" data-video-url="https://www.instagram.com/reel/DdtXM1TxOtN/" data-platform="Instagram" aria-label="ดูวิดีโอ Instagram Reel 2"><span class="cover-platform">Instagram</span><span class="cover-play" aria-hidden="true">▶</span><span class="cover-label">ดูวิดีโอ Instagram Reel 2</span></a></div></div>
               <div class="campaign-details"><div class="detail"><strong data-i18n="roleLabel">บทบาทของฉัน</strong><p data-i18n="campaign04Role">คัดเลือกอินฟลูเอนเซอร์ 20 คนที่มีช่องเกี่ยวกับกล่องสุ่มและตุ๊กตาพวงกุญแจ โดยกำหนดให้เผยแพร่คอนเทนต์บนแพลตฟอร์มอื่นที่ไม่ใช่ TikTok เจรจาค่าจ้างและข้อตกลง ประสานงานการจัดส่งสินค้า ติดตามการส่งดราฟต์และการเผยแพร่ พร้อมรวบรวมรหัสโพสต์เพื่อติดตามผลงานของแคมเปญ</p></div></div>
             </div>
           </article>
@@ -639,6 +619,28 @@
       drawing:["Character Illustration","Color Painting","Resin Painting","Drawing 04","Drawing 05","Drawing 06"]
     };
     let activeTab="graphic";
+    // Try to retrieve public thumbnail metadata where the platform permits it.
+    // If the platform blocks cross-origin access, keep the branded clickable cover.
+    async function loadVideoThumbnails(root=document){
+      const covers=root.querySelectorAll?.(".video-cover[data-video-url]")||[];
+      for(const cover of covers){
+        if(cover.dataset.thumbnailChecked==="true")continue;
+        cover.dataset.thumbnailChecked="true";
+        const url=cover.dataset.videoUrl||cover.href;
+        const platform=cover.dataset.platform||(/instagram\.com/i.test(url)?"Instagram":"TikTok");
+        const endpoint=platform==="TikTok"?`https://www.tiktok.com/oembed?url=${encodeURIComponent(url)}`:`https://www.instagram.com/api/v1/oembed/?url=${encodeURIComponent(url)}`;
+        try{
+          const response=await fetch(endpoint,{mode:"cors",credentials:"omit"});
+          if(!response.ok)continue;
+          const data=await response.json();
+          const imageUrl=data.thumbnail_url||data.thumbnail_url_with_play_button;
+          if(!imageUrl)continue;
+          const img=new Image();img.alt="";img.loading="lazy";img.referrerPolicy="no-referrer";
+          img.onload=()=>{if(cover.isConnected){const old=cover.querySelector("img");if(old)old.remove();cover.prepend(img);}};
+          img.src=imageUrl;
+        }catch(_error){ /* Expected fallback when platform blocks public metadata access. */ }
+      }
+    }
     function renderGallery(tab){
       activeTab=tab;
       const gallery=document.getElementById("gallery");
@@ -649,28 +651,16 @@
         const links=images.videoLinks.filter(Boolean);
         links.forEach((url,i)=>{
           const card=document.createElement("div");card.className="gallery-video";
-          const embed=document.createElement("blockquote");embed.className="tiktok-embed";embed.setAttribute("cite",url);embed.style.maxWidth="100%";embed.style.minWidth="0";
-          const section=document.createElement("section");
-          const link=document.createElement("a");link.href=url;link.target="_blank";link.rel="noopener";link.textContent=lang==="th"?"เปิดวิดีโอ TikTok":"Open TikTok video";
-          section.append(link);embed.append(section);card.append(embed);gallery.append(card);
+          const platform=/instagram\.com/i.test(url)?"Instagram":"TikTok";
+          const link=document.createElement("a");link.className="video-cover";link.href=url;link.target="_blank";link.rel="noopener noreferrer";
+          link.dataset.videoUrl=url;link.dataset.platform=platform;
+          link.setAttribute("aria-label",`${platform} video ${i+1}`);
+          const badge=document.createElement("span");badge.className="cover-platform";badge.textContent=platform;
+          const play=document.createElement("span");play.className="cover-play";play.setAttribute("aria-hidden","true");play.textContent="▶";
+          const label=document.createElement("span");label.className="cover-label";label.textContent=lang==="th"?`วิดีโอ ${i+1} · กดเพื่อเปิดคลิป`:`Video ${i+1} · Open video`;
+          link.append(badge,play,label);card.append(link);gallery.append(card);
         });
-        // The TikTok embed script may already be loaded for the campaign section.
-        // Re-process newly added embeds when the Video tab is opened or revisited.
-        const processTikTokGallery=()=>{
-          if(typeof window.tiktokEmbedLoad==="function"){
-            window.tiktokEmbedLoad();
-            return;
-          }
-          const existing=document.querySelector('script[src^="https://www.tiktok.com/embed.js"]');
-          if(existing){
-            existing.addEventListener("load",()=>{if(typeof window.tiktokEmbedLoad==="function")window.tiktokEmbedLoad();},{once:true});
-            return;
-          }
-          const script=document.createElement("script");script.src="https://www.tiktok.com/embed.js";script.async=true;
-          script.onload=()=>{if(typeof window.tiktokEmbedLoad==="function")window.tiktokEmbedLoad();};
-          document.body.append(script);
-        };
-        processTikTokGallery();
+        loadVideoThumbnails();
         return;
       }
       const paths=images.gallery[tab]||[];
@@ -705,12 +695,7 @@
     document.getElementById("modalClose").addEventListener("click",()=>modal.classList.remove("open"));
     modal.addEventListener("click",e=>{if(e.target===modal)modal.classList.remove("open");});
     document.addEventListener("keydown",e=>{if(e.key==="Escape")modal.classList.remove("open");});
-    if(document.querySelector(".campaign-videos .tiktok-embed") && !document.querySelector('script[src="https://www.tiktok.com/embed.js"]')){
-      const tiktokScript=document.createElement("script");tiktokScript.src="https://www.tiktok.com/embed.js";tiktokScript.async=true;document.body.append(tiktokScript);
-    }
-    if(document.querySelector(".instagram-videos .instagram-media") && !document.querySelector('script[src="https://www.instagram.com/embed.js"]')){
-      const instagramScript=document.createElement("script");instagramScript.src="https://www.instagram.com/embed.js";instagramScript.async=true;document.body.append(instagramScript);
-    }
+    loadVideoThumbnails();
     function setupResume(id,key){
       const a=document.getElementById(id);
       a.href=resume[key]||"#";
