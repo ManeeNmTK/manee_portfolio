@@ -622,7 +622,7 @@
       document.querySelectorAll(".tab-btn").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.tab===tab)));
       gallery.replaceChildren();
       const paths=images.gallery[tab]||[];
-      for(let i=0;i<Math.max(6,paths.length);i++){
+      for (let i = 0; i < paths.length; i++) {
         const path=paths[i]||"";
         const button=document.createElement("button");button.type="button";button.className="gallery-item";
         button.setAttribute("aria-label",`${textFor("galleryItem")} ${i+1}`);
@@ -638,7 +638,7 @@
         }
         ph.append(label,size);
         const caption=document.createElement("span");caption.className="gallery-caption";caption.textContent=galleryCaptions[tab]?.[i]||`${textFor("galleryItem")} ${i+1}`;
-        button.append(ph,caption);
+        button.append(ph);
         button.addEventListener("click",()=>{
           if(path){
             document.getElementById("modalImage").src=path;document.getElementById("modalImage").alt=`${textFor("galleryItem")} ${i+1}`;
