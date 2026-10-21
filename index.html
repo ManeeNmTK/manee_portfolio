@@ -116,13 +116,21 @@
     .campaign-subtitle{font-size:.94rem;font-weight:600;margin-top:-4px}
     .campaign-layout{display:grid;grid-template-columns:1fr .92fr;gap:18px;margin-top:14px}
     .campaign-images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-content:start}
-    .campaign-videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-content:start;min-width:0}
-    .campaign-video{min-width:0;overflow:hidden;border:2px solid var(--brown);border-radius:12px;background:#fff}
-    .campaign-video .tiktok-embed{margin:0!important;width:100%!important}
+    /* Campaign videos: compact square cards, stacked vertically instead of side-by-side. */
+    .campaign-videos{display:grid;grid-template-columns:minmax(0,260px);justify-content:center;gap:12px;align-content:start;min-width:0}
+    .campaign-video{width:100%;max-width:260px;aspect-ratio:1/1;justify-self:center;min-width:0;overflow:hidden;border:2px solid var(--brown);border-radius:12px;background:#fff;position:relative}
+    .campaign-video .tiktok-embed,.campaign-video .instagram-media{margin:0!important;width:100%!important;max-width:100%!important;min-width:0!important;height:100%!important;max-height:100%!important;overflow:hidden!important}
+    .campaign-video iframe{width:100%!important;height:100%!important;max-height:100%!important;border:0!important}
     .gallery-video{min-width:0;overflow:hidden;border:2px solid var(--brown);border-radius:12px;background:#fff}
-    .gallery-video .tiktok-embed{margin:0!important;width:100%!important}
+    .gallery-video .tiktok-embed{margin:0!important;width:100%!important;max-width:100%!important;min-width:0!important}
     .campaign-images .placeholder{border-width:2px;border-radius:12px}
     .campaign-images .placeholder:first-child{grid-column:span 3;aspect-ratio:16/9}
+    /* Campaign 01: larger square image tiles to balance the video frames in the other campaigns. */
+    .campaign-card:first-child .campaign-layout{grid-template-columns:1fr;gap:16px}
+    .campaign-card:first-child .campaign-images{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .campaign-card:first-child .campaign-images .placeholder,
+    .campaign-card:first-child .campaign-images .placeholder:first-child{grid-column:auto;aspect-ratio:1/1;min-width:0}
+    .campaign-card:first-child .campaign-details{border-left:0;border-top:2px solid var(--brown);padding:14px 0 0}
     .campaign-details{border-left:2px solid var(--brown);padding-left:16px}
     .detail{margin-bottom:12px}
     .detail strong{display:block;font-family:"Kanit",sans-serif}
@@ -646,9 +654,23 @@
           const link=document.createElement("a");link.href=url;link.target="_blank";link.rel="noopener";link.textContent=lang==="th"?"เปิดวิดีโอ TikTok":"Open TikTok video";
           section.append(link);embed.append(section);card.append(embed);gallery.append(card);
         });
-        if(!document.querySelector('script[src="https://www.tiktok.com/embed.js"]')){
-          const script=document.createElement("script");script.src="https://www.tiktok.com/embed.js";script.async=true;document.body.append(script);
-        }
+        // The TikTok embed script may already be loaded for the campaign section.
+        // Re-process newly added embeds when the Video tab is opened or revisited.
+        const processTikTokGallery=()=>{
+          if(typeof window.tiktokEmbedLoad==="function"){
+            window.tiktokEmbedLoad();
+            return;
+          }
+          const existing=document.querySelector('script[src^="https://www.tiktok.com/embed.js"]');
+          if(existing){
+            existing.addEventListener("load",()=>{if(typeof window.tiktokEmbedLoad==="function")window.tiktokEmbedLoad();},{once:true});
+            return;
+          }
+          const script=document.createElement("script");script.src="https://www.tiktok.com/embed.js";script.async=true;
+          script.onload=()=>{if(typeof window.tiktokEmbedLoad==="function")window.tiktokEmbedLoad();};
+          document.body.append(script);
+        };
+        processTikTokGallery();
         return;
       }
       const paths=images.gallery[tab]||[];
